@@ -39,12 +39,16 @@ namespace WindowsFormsApp
 
         private void SelectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("SelectToolStripMenuItem_Click");
         }
 
         private void ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("ToolStripMenuItem1_Click");
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.ShowDialog();
+            if (dialog.FileName != string.Empty)
+            {
+                MessageBox.Show(dialog.FileName + "\r\n");
+            }
         }
 
         private void ToolStripMenuItem1_MouseUp(object sender, MouseEventArgs e)
@@ -61,6 +65,11 @@ namespace WindowsFormsApp
             lvi.SubItems.Add("第3列,第" + index + "行");
             FileListView.Items.Add(lvi);
             FileListView.EndUpdate();  //结束数据处理，UI界面一次性绘制。
+        }
+
+        private void FileListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         //private void OpenFileBtn_Click(object sender, EventArgs e)

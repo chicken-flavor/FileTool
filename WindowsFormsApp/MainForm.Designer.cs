@@ -34,7 +34,7 @@ namespace WindowsFormsApp
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.选择ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip3.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +46,7 @@ namespace WindowsFormsApp
             this.FileListView.Size = new System.Drawing.Size(686, 335);
             this.FileListView.TabIndex = 0;
             this.FileListView.UseCompatibleStateImageBehavior = false;
+            this.FileListView.SelectedIndexChanged += new System.EventHandler(this.FileListView_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
@@ -66,7 +67,7 @@ namespace WindowsFormsApp
             // menuStrip3
             // 
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.选择ToolStripMenuItem});
+            this.SelectToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Size = new System.Drawing.Size(710, 25);
@@ -75,17 +76,17 @@ namespace WindowsFormsApp
             // 
             // 选择ToolStripMenuItem
             // 
-            this.选择ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.选择ToolStripMenuItem.Name = "选择ToolStripMenuItem";
-            this.选择ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.选择ToolStripMenuItem.Text = "选择";
-            this.选择ToolStripMenuItem.Click += new System.EventHandler(this.SelectToolStripMenuItem_Click);
+            this.SelectToolStripMenuItem.Name = "选择ToolStripMenuItem";
+            this.SelectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.SelectToolStripMenuItem.Text = "选择";
+            this.SelectToolStripMenuItem.Click += new System.EventHandler(this.SelectToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.toolStripMenuItem1.Text = "文件夹";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             this.toolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ToolStripMenuItem1_MouseUp);
@@ -119,7 +120,7 @@ namespace WindowsFormsApp
         private MenuStrip menuStrip1;
         private MenuStrip menuStrip2;
         private MenuStrip menuStrip3;
-        private ToolStripMenuItem 选择ToolStripMenuItem;
+        private ToolStripMenuItem SelectToolStripMenuItem;
         private ToolStripMenuItem toolStripMenuItem1;
     }
 }
