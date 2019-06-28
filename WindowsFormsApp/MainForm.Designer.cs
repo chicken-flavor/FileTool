@@ -30,6 +30,7 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.FileListView = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -43,16 +44,15 @@ namespace WindowsFormsApp
             // 
             this.FileListView.Location = new System.Drawing.Point(12, 28);
             this.FileListView.Name = "FileListView";
-            this.FileListView.Size = new System.Drawing.Size(686, 335);
+            this.FileListView.Size = new System.Drawing.Size(457, 341);
             this.FileListView.TabIndex = 0;
             this.FileListView.UseCompatibleStateImageBehavior = false;
-            this.FileListView.SelectedIndexChanged += new System.EventHandler(this.FileListView_SelectedIndexChanged);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Location = new System.Drawing.Point(0, 49);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(710, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(481, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,7 +60,7 @@ namespace WindowsFormsApp
             // 
             this.menuStrip2.Location = new System.Drawing.Point(0, 25);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(710, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(481, 24);
             this.menuStrip2.TabIndex = 2;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -70,15 +70,15 @@ namespace WindowsFormsApp
             this.SelectToolStripMenuItem});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Size = new System.Drawing.Size(710, 25);
+            this.menuStrip3.Size = new System.Drawing.Size(481, 25);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
-            // 选择ToolStripMenuItem
+            // SelectToolStripMenuItem
             // 
             this.SelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.SelectToolStripMenuItem.Name = "选择ToolStripMenuItem";
+            this.SelectToolStripMenuItem.Name = "SelectToolStripMenuItem";
             this.SelectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.SelectToolStripMenuItem.Text = "选择";
             this.SelectToolStripMenuItem.Click += new System.EventHandler(this.SelectToolStripMenuItem_Click);
@@ -89,19 +89,18 @@ namespace WindowsFormsApp
             this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
             this.toolStripMenuItem1.Text = "文件夹";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
-            this.toolStripMenuItem1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ToolStripMenuItem1_MouseUp);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 375);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(481, 381);
             this.Controls.Add(this.FileListView);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.menuStrip3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainForm";
