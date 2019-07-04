@@ -30,14 +30,16 @@ namespace WindowsFormsApp
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.FileListView = new System.Windows.Forms.ListView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.SelectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip3.SuspendLayout();
+            this.ToolStripMenuItemSelect = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemFileHolder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItemTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // FileListView
@@ -67,31 +69,43 @@ namespace WindowsFormsApp
             // menuStrip3
             // 
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.SelectToolStripMenuItem});
+            this.ToolStripMenuItemSelect});
             this.menuStrip3.Location = new System.Drawing.Point(0, 0);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Size = new System.Drawing.Size(481, 25);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
-            // SelectToolStripMenuItem
+            // ToolStripMenuItemSelect
             // 
-            this.SelectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.SelectToolStripMenuItem.Name = "SelectToolStripMenuItem";
-            this.SelectToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.SelectToolStripMenuItem.Text = "选择";
-            this.SelectToolStripMenuItem.Click += new System.EventHandler(this.SelectToolStripMenuItem_Click);
+            this.ToolStripMenuItemSelect.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItemFileHolder,
+            this.ToolStripMenuItemTest});
+            this.ToolStripMenuItemSelect.Name = "ToolStripMenuItemSelect";
+            this.ToolStripMenuItemSelect.Size = new System.Drawing.Size(44, 21);
+            this.ToolStripMenuItemSelect.Text = "选择";
             // 
-            // toolStripMenuItem1
+            // ToolStripMenuItemFileHolder
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 22);
-            this.toolStripMenuItem1.Text = "文件夹";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
+            this.ToolStripMenuItemFileHolder.Name = "ToolStripMenuItemFileHolder";
+            this.ToolStripMenuItemFileHolder.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItemFileHolder.Text = "文件夹";
+            this.ToolStripMenuItemFileHolder.Click += new System.EventHandler(this.ToolStripMenuItemFileHolder_Click);
+            // 
+            // ToolStripMenuItemTest
+            // 
+            this.ToolStripMenuItemTest.Name = "ToolStripMenuItemTest";
+            this.ToolStripMenuItemTest.Size = new System.Drawing.Size(112, 22);
+            this.ToolStripMenuItemTest.Text = "测试";
+            this.ToolStripMenuItemTest.Click += new System.EventHandler(this.ToolStripMenuItemTest_Click);
+            // 
+            // ToolTip
+            // 
+            this.ToolTip.IsBalloon = true;
             // 
             // MainForm
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 381);
@@ -106,6 +120,8 @@ namespace WindowsFormsApp
             this.Name = "MainForm";
             this.Text = "Ayyj";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             this.ResumeLayout(false);
@@ -119,8 +135,10 @@ namespace WindowsFormsApp
         private MenuStrip menuStrip1;
         private MenuStrip menuStrip2;
         private MenuStrip menuStrip3;
-        private ToolStripMenuItem SelectToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem ToolStripMenuItemSelect;
+        private ToolStripMenuItem ToolStripMenuItemFileHolder;
+        private ToolStripMenuItem ToolStripMenuItemTest;
+        private ToolTip ToolTip;
     }
 }
 
