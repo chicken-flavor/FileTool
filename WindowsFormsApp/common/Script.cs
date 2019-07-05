@@ -9,6 +9,10 @@ namespace WindowsFormsApp
 {
     public class Scripts
     {
+        /// <summary>
+        /// 去除目标目录所有嵌套重复（名称重复）的文件夹
+        /// </summary>
+        /// <param name="rootDir"></param>
         public static void Reduce(DirectoryInfo rootDir)
         {
             var files = rootDir.GetFiles();
@@ -47,7 +51,7 @@ namespace WindowsFormsApp
         /// </summary>
         /// <param name="rootDir"></param>
         /// <param name="subDir"></param>
-        private static void Move(DirectoryInfo rootDir, DirectoryInfo subDir)
+        public static void Move(DirectoryInfo rootDir, DirectoryInfo subDir)
         {
             Directory.Move(subDir.FullName, rootDir.FullName);
         }

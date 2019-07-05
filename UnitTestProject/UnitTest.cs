@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using WindowsFormsApp;
 
 namespace UnitTestProject
 {
@@ -10,8 +11,9 @@ namespace UnitTestProject
         [TestMethod]
         public void TestMethod()
         {
-            string path = "D:\\backup\\test\\测试";
-            WindowsFormsApp.Scripts.Reduce(new DirectoryInfo(path));
+            Scripts.Move(new DirectoryInfo(@"D:\\backup\\test\\Demo"), new DirectoryInfo(@"D:\\backup\\test\\Demo1"));
+            //string path = "D:\\backup\\test\\测试";
+            //Scripts.Reduce(new DirectoryInfo(path));
         }
     }
 }
